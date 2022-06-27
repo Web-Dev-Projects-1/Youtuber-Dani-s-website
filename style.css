@@ -1,0 +1,291 @@
+:root {
+    --clr-primary: #b15e57;
+    --clr-dark: #743d38;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html {
+    overflow-y: overlay;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    line-height: 1.6;
+    margin: 0;
+}
+
+body {
+    font-family: roboto, sans-serif;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+}
+
+/* WRAPPER CLASSES */
+.main-wrapper {
+    overflow: hidden;
+    background-image: linear-gradient(to bottom left, rgb(82, 82, 82), black);
+    background-repeat: no-repeat;
+    background-position: fixed;
+    margin-bottom: -17px;
+}
+
+.wrapper--page {
+    height: 100vh;
+    margin: auto;
+}
+
+.wrapper--flexible {
+    min-height: 100vh;
+    margin: auto;
+}
+
+/* FOOTER STUFF */
+.push {
+    height: 17px;
+}
+
+footer {
+    height: 17px;
+    font-size: 0.7rem;
+    color: white;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* NAVBAR */
+nav ul li {
+    display: block;
+    float: left;
+    min-width: 12vw;
+}
+
+nav li a {
+    font-size: 1.25rem;
+
+    text-transform: uppercase;
+}
+
+nav li a:hover {
+    color: var(--clr-primary);
+}
+
+nav li #focus {
+    text-shadow: 0px 0px 2px yellow, 0px -2px 2px red;
+    font-weight: 900;
+}
+
+nav li #focus:hover {
+    color: white;
+}
+
+/* USED ON MULTIPLE PAGES */
+.header-upper {
+    padding: 2rem;
+}
+
+.header-upper img {
+    width: 100px;
+}
+
+.header-upper .split-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-a {
+    margin: auto;
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+.section-a h1 {
+    font-weight: lighter;
+    font-size: 2.5rem;
+}
+
+.text-content {
+    width: 70%;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image-content {
+    width: 85%;
+    margin: auto;
+    padding: 2.5em 0;
+}
+
+.text-content p, .image-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2em;
+}
+
+.img-btn {
+    transition: all 0.1s;
+}
+
+.img-btn:hover {
+    transform: scale(1.1);
+    filter: brightness(60%);
+}
+
+/* INDEX PAGE */
+#showcase .btn {
+    font-size: 1.5rem;
+    border-radius: 5px;
+    background-color: var(--clr-primary);
+    padding: 1rem 2rem;
+    transition: all 0.5s;
+}
+
+#intro .btn--small {
+    border-radius: 5px;
+    background-color: var(--clr-primary);
+    padding: 0.5em 1em;
+    transition: all 0.5s;
+}
+
+#showcase .btn:hover, #intro .btn--small:hover {
+    transform: scale(1.1);
+    background-color: var(--clr-dark);
+}
+
+/* GAMES AND INDEX PAGES */
+#games .split-3, #intro .split-3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#intro .split-3 {
+    gap: 5vw;
+}
+
+#games .split-3 {
+    gap: 15vw;
+}
+
+#games .split-3 .img-div {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#games .split-3 .img-div img {
+    height:100%;
+}
+
+#games h1 {
+    margin-bottom: 2.5em;
+}
+
+/* VIDEOS PAGE */
+#videos .grid-3 {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10vw;
+    grid-row-gap: 12.5vh;
+}
+
+#videos .grid-3 p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+#videos .grid-3 img {
+    border-radius: 10px;
+    width: 230px;
+}
+
+/* CONTACT PAGE */
+#contacts .split-5 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4vw;
+}
+
+#contacts .split-5 div {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+}
+
+#contacts #twitter {
+    background-image: url("twitter.png");
+}
+
+#contacts #facebook {
+    background-color: white;
+    background-image: url("facebook.png");
+}
+
+#contacts #youtube {
+    background-image: url("youtube.png");
+}
+
+#contacts #discord {
+    background-image: url("discord.png");
+}
+
+#contacts #gmail {
+    background-image: url("gmail.png");
+}
+
+@media (max-width: 920px) {
+    nav ul li {
+        float: unset;
+    }
+
+    .wrapper--page {
+        height: 125vh;
+    }
+
+    #games .split-3 {
+        flex-direction: column;
+    }
+
+    #games .split-3 .img-div {
+        height: 300px;
+        width: 300px;
+    }
+
+    #videos .grid-3 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #videos .grid-3 img {
+        width: 55vw;
+    }
+
+    #videos .grid-3 p {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 700px) {
+    #games .split-3 .img-div {
+        height: 200px;
+        width: 200px;
+    }
+}
